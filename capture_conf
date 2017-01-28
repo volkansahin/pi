@@ -1,0 +1,15 @@
+#/etc/init.d/motion
+#LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libv4l/v4l1compat.so
+#export LD_PRELOAD
+
+sudo apt-get install -y libjpeg-dev libavformat56 libavformat-dev libavcodec56 libavcodec-dev libavutil54 libavutil-dev libc6-dev zlib1g-dev libmysqlclient18 libmysqlclient-dev libpq5 libpq-dev
+sudo pip install cython
+sudo apt-get install git
+sudo apt-get install cmake
+git clone https://github.com/volkansahin/userland.git
+./userland/buildme
+git clone https://github.com/volkansahin/motion.git
+cd motion/
+git checkout mmal-test
+USERLANDPATH=/home/pi/userland cmake .
+make
