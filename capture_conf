@@ -13,3 +13,6 @@ cd motion/
 git checkout mmal-test
 USERLANDPATH=/home/pi/userland cmake .
 make
+
+
+
